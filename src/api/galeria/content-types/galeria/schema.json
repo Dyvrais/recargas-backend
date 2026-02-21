@@ -11,9 +11,9 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "imagencarrusel": {
+    "ImagenBanner": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "allowedTypes": [
         "images"
       ]

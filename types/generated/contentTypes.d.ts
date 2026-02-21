@@ -444,7 +444,7 @@ export interface ApiGaleriaGaleria extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    imagencarrusel: Schema.Attribute.Media<'images', true>;
+    ImagenBanner: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -472,6 +472,9 @@ export interface ApiOpcionOpcion extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    ImagenCoin: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -532,7 +535,6 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Descripcion: Schema.Attribute.Text;
     Imagen: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -548,7 +550,6 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     >;
     Nombre: Schema.Attribute.String;
     opcions: Schema.Attribute.Relation<'oneToMany', 'api::opcion.opcion'>;
-    Precio: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

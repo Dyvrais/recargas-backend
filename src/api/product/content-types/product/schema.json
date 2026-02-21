@@ -14,12 +14,6 @@
     "Nombre": {
       "type": "string"
     },
-    "Precio": {
-      "type": "decimal"
-    },
-    "Descripcion": {
-      "type": "text"
-    },
     "Imagen": {
       "type": "media",
       "multiple": true,
