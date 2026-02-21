@@ -512,6 +512,9 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::orden.orden'> &
       Schema.Attribute.Private;
+    MetodoPago: Schema.Attribute.Enumeration<
+      ['pago-movil', 'zinli', 'binance', 'kontigo']
+    >;
     publishedAt: Schema.Attribute.DateTime;
     Referencia: Schema.Attribute.BigInteger;
     Telefono: Schema.Attribute.BigInteger;

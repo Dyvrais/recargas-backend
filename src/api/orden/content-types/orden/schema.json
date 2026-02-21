@@ -27,6 +27,15 @@
         "ENTREGADO",
         "CANCELADO"
       ]
+    },
+    "MetodoPago": {
+      "type": "enumeration",
+      "enum": [
+        "pago-movil",
+        "zinli",
+        "binance",
+        "kontigo"
+      ]
     }
   }
 }
