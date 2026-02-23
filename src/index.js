@@ -1,20 +1,20 @@
-'use strict';
+// src/index.js
+"use strict";
+const { Server } = require("socket.io");
 
 module.exports = {
-  /**
-   * An asynchronous register function that runs before
-   * your application is initialized.
-   *
-   * This gives you an opportunity to extend code.
-   */
-  register(/*{ strapi }*/) {},
+  register(/* { strapi } */) {},
 
-  /**
-   * An asynchronous bootstrap function that runs before
-   * your application gets started.
-   *
-   * This gives you an opportunity to set up your data model,
-   * run jobs, or perform some special logic.
-   */
-  bootstrap(/*{ strapi }*/) {},
+  bootstrap({ strapi }) {
+    // Attach socket.io to the Strapi server
+    const io = new Server(strapi.server.httpServer, {
+      cors: {
+        origin: "*", // Allow the admin panel to connect
+        methods: ["GET", "POST"],
+      },
+    });
+
+    // Make `io` globally available so we can trigger it from anywhere in Strapi
+    strapi.io = io;
+  },
 };
