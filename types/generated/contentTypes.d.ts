@@ -509,6 +509,14 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
     Estado: Schema.Attribute.Enumeration<
       ['PENDIENTE', 'ENTREGADO', 'CANCELADO']
     >;
+    IDOrden: Schema.Attribute.Integer &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::orden.orden'> &
       Schema.Attribute.Private;
@@ -535,6 +543,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    categoria: Schema.Attribute.Enumeration<['juegos', 'streaming', 'wallet']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -548,9 +557,6 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'api::product.product'
     > &
       Schema.Attribute.Private;
-    metodoiniciosesion: Schema.Attribute.Enumeration<
-      ['Facebook', 'Google', 'Activision']
-    >;
     Nombre: Schema.Attribute.String;
     opcions: Schema.Attribute.Relation<'oneToMany', 'api::opcion.opcion'>;
     publishedAt: Schema.Attribute.DateTime;

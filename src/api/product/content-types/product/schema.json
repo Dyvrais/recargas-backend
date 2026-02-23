@@ -30,12 +30,12 @@
       "target": "api::opcion.opcion",
       "mappedBy": "product"
     },
-    "metodoiniciosesion": {
+    "categoria": {
       "type": "enumeration",
       "enum": [
-        "Facebook",
-        "Google",
-        "Activision"
+        "juegos",
+        "streaming",
+        "wallet"
       ]
     }
   }

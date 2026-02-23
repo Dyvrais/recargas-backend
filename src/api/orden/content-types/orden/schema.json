@@ -36,6 +36,11 @@
         "binance",
         "kontigo"
       ]
+    },
+    "IDOrden": {
+      "type": "integer",
+      "unique": true,
+      "max": 5
     }
   }
 }
