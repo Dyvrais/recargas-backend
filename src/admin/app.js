@@ -6,8 +6,12 @@ export default {
     // Your existing custom config...
   },
   bootstrap(app) {
-    // Connect to the backend socket using the current domain
-    const socket = io(window.location.origin);
+    // 1. Force 'websocket' transport to bypass Strapi Cloud load balancer issues
+    // 2. Explicitly tell it to use secure connections (wss://)
+    const socket = io(window.location.origin, {
+      transports: ["websocket"],
+      secure: true,
+    });
 
     socket.on("admin_notification", (data) => {
       console.log("Notification received:", data.message);

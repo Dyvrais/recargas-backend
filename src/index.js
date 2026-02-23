@@ -6,15 +6,17 @@ module.exports = {
   register(/* { strapi } */) {},
 
   bootstrap({ strapi }) {
-    // Attach socket.io to the Strapi server
     const io = new Server(strapi.server.httpServer, {
       cors: {
-        origin: "*", // Allow the admin panel to connect
+        // This dynamically allows the domain the request is coming from
+        origin: (origin, callback) => {
+          callback(null, true);
+        },
         methods: ["GET", "POST"],
+        credentials: true,
       },
     });
 
-    // Make `io` globally available so we can trigger it from anywhere in Strapi
     strapi.io = io;
   },
 };
