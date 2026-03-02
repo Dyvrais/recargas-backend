@@ -543,7 +543,9 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    categoria: Schema.Attribute.Enumeration<['juegos', 'streaming', 'wallet']>;
+    categoria: Schema.Attribute.Enumeration<
+      ['juegos', 'gift-cards', 'streaming', 'wallet']
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -34,6 +34,7 @@
       "type": "enumeration",
       "enum": [
         "juegos",
+        "gift-cards",
         "streaming",
         "wallet"
       ]
