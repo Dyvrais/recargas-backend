@@ -21,7 +21,7 @@ module.exports = {
 
     // Parse and format the cart
     let carritoText = "N/A";
-    if (result.CarritoJSON && result.publishedAt) {
+    if (result.CarritoJSON && result.createdAt) {
       try {
         const carrito = result.CarritoJSON; // Already parsed as JSON in Strapi
         if (Array.isArray(carrito)) {
