@@ -31,7 +31,7 @@ module.exports = {
         if (Array.isArray(carrito)) {
           carritoText = carrito
             .map((item, index) => {
-              return ` *Producto:* ${item.NombreProducto || "N/A"}\n  *Item:* ${item.CoinSeleccionada || "N/A"}\n  *Precio Bs:* ${item.PrecioBolivares || "N/A"}\n  *Precio USD:* $${item.PrecioDolares || "N/A"}\n  *Usuario ID:* ${item.IDdelUsuario || "N/A"}\n  *Teléfono:* ${item.TelefonoDeContacto || "N/A"}`;
+              return ` *Producto:* ${item.NombreProducto || "N/A"}\n  *Item:* ${item.CoinSeleccionada || "N/A"}\n  *Precio Bs:* ${item.PrecioBolivares || "N/A"}\n  *Precio USD:* $${item.PrecioDolares || "N/A"}\n  *ID de Usuario:* ${item.IDdelUsuario || "N/A"}\n  *Teléfono:* ${item.TelefonoDeContacto || "N/A"}\n *ID Zona:* ${item.IDZona || "N/A"}\n *Correo de la cuenta:* ${item.CorreoDeCuenta || "N/A"}\n  *Contraseña de la cuenta:* ${item.ContraseñaDeCuenta || "N/A"}\n *Metodo de inicio de sesión:* ${item.MetodoDeInicioSesion || "N/A"}`;
             })
             .join("\n\n");
         } else {
