@@ -61,4 +61,10 @@ ${carritoText}
       console.error("Telegram Error:", error.response?.data || error.message);
     }
   },
+
+  async afterUpdate(event) {
+    // This runs every time you edit the order in the admin panel
+    // Intentionally left empty to prevent notifications on updates
+    console.log("Order updated, but no notification sent."); // Optional debug log
+  },
 };
